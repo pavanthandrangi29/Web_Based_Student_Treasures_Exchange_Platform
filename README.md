@@ -1,5 +1,6 @@
 # Web_Based_Student_Treasures_Exchange_Platform
 
+![UsecaseDiagram](https://github.com/user-attachments/assets/e9bbe4ff-d7d9-485a-97c7-6bfcc2b74151)
 
 ## Overview
 
