@@ -1,6 +1,26 @@
 # Web_Based_Student_Treasures_Exchange_Platform
-
+## Home Page
+![Home](https://github.com/user-attachments/assets/a37d225a-dbf2-437a-b2e9-54fe7c9679e0)
+## Working Video
+https://github.com/user-attachments/assets/4765c78a-4279-4e26-b46c-39ad7f6bb5e2
+## Use Case Diagram
 ![UsecaseDiagram](https://github.com/user-attachments/assets/e9bbe4ff-d7d9-485a-97c7-6bfcc2b74151)
+## Admin Page
+![admin](https://github.com/user-attachments/assets/c183ce5e-762d-4c2d-8371-b3587aab60f2)
+## Admin View Students
+![admin view students](https://github.com/user-attachments/assets/a29695c4-dd4c-4fb2-b253-f75d6f56f725)
+## Student Registration
+![Student registration](https://github.com/user-attachments/assets/9e99c11a-28f4-4a20-9583-39d96b735b4f)
+## Student Login
+![Student Login](https://github.com/user-attachments/assets/26e6e1ab-0a02-4eb7-82ab-4d0768aaea31)
+## Add Items
+![Add items](https://github.com/user-attachments/assets/394c1e65-9dbf-4550-b4e6-4efcefb72b8a)
+## View Items
+![View items (2)](https://github.com/user-attachments/assets/6589f5a5-cff3-4694-aabb-d6cae5dcdb01)
+## Shop Items
+![Shop](https://github.com/user-attachments/assets/f44a9d50-39e6-4692-9a7c-ba84527d7d09)
+## Chat Items
+![Chat](https://github.com/user-attachments/assets/ebb9d35a-c1a4-4b3b-8727-cecd8d6e0e6a)
 
 ## Overview
 
