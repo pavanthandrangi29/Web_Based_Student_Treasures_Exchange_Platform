@@ -1,0 +1,71 @@
+{% include 'sheader.html' %}
+
+<script>
+function validateform(){
+
+var paymnet=document.getElementById("pmthd");
+
+var upi=document.getElementById("upi").value.trim();
+
+var ptype = paymnet.value.trim();
+
+var res=ptype.localeCompare("COD");
+
+if (res==0){
+  return true;
+}
+else if(upi==null || upi==""){
+  alert("Enter UPI Id");
+  return false;
+}else{
+
+return true
+}
+}
+</script>
+<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+
+						<h1>Make Payment</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<!-- contact form -->
+	<div class="contact-from-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mb-5 mb-lg-0">
+					<div class="form-title">
+						<h2>Make Payment</h2>
+						<p></p>
+					</div>
+				 	<div id="form_status"></div>
+					<div class="contact-form">
+						<form action="payment" method="post" onsubmit="return validateform();">
+							<p>
+								<select type="text" placeholder="Enter Card Number"  id="pmthd" name="pmthd"  required>
+                                    <option value="" >Select Payment Method
+                                    <option value="PhonePay" >PhonePe
+                                    <option value="GooglePay" >Google Pay
+                                    <option value="Paytm" >Paytm
+									<option value="COD">Cash On Delivary
+                                </select>
+							</p>
+							<p>
+								<input type="text" placeholder="UPI Id" name="upi"  id="upi" >
+                                </input>
+							</p>
+                            <p><input type="submit" value="Place Order"></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end contact form -->
+{% include 'footer.html' %}

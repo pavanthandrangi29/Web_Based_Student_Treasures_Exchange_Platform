@@ -1,0 +1,92 @@
+{% include "sheader.html" %}
+    <div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+
+						<h1>Cart</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<html>
+<body>
+<form>
+	<!-- cart -->
+	<div class="cart-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-12">
+					<div class="cart-table-wrap">
+						<table class="cart-table">
+							<thead class="cart-table-head">
+								<tr class="table-head-row">
+                                    <th class="product-remove"></th>
+									<th class="product-image">Product Image</th>
+									<th class="product-name">Name</th>
+									<th class="product-quantity">Price</th>
+									<th class="product-price">Category</th>
+
+								</tr>
+							</thead>
+                            {% if msg2 %}
+    <script>alert('your detailes deleted successfully.')</script>
+    {% endif %}
+    {% for records in items %}
+        <tr>
+            <td class="product-remove"><a href="/remove/{{records[0]}}"><i class="far fa-window-close"></i></a></td>
+            <td><img src="{{ url_for('static',filename='pictures/'+records[6])}}" width="50" height="50"></td>
+            <td>{{records[3]}}</td>
+            <td>{{records[4]}}</td>
+			<td>{{records[2]}}</td>
+        </tr>
+    {% endfor %}
+                        </table>
+					</div>
+                </div>
+    <!-- logo carousel -->
+				<div class="col-lg-4">
+					<div class="total-section">
+						<table class="total-table">
+							<thead class="total-table-head">
+								<tr class="table-total-row">
+									<th>Total</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="total-data">
+									<td><strong>Subtotal: </strong></td>
+									<td>{{cost}}</td>
+								</tr>
+								<!--tr class="total-data">
+									<td><strong>Shipping: </strong></td>
+									<td>45</td>
+								</tr>-->
+								<tr class="total-data">
+									<td><strong>Total: </strong></td>
+									<td>{{total}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="cart-buttons">
+							<!--a href="#" class="boxed-btn">Update Cart</a>-->
+							<a href="{{url_for('place_order')}}" class="boxed-btn black">Buy Now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end cart -->
+    <!-- logo carousel -->
+
+	<!-- end logo carousel -->
+    <!-- copyright -->
+    {% include 'footer.html' %}
+
+{% if msg %}
+<script>alert('Item Removed From Cart')</script>
+{% endif %}

@@ -1,0 +1,65 @@
+{% include "aheader.html" %}
+<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<h1>VIEW STUDENTS</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<br><br>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr:hover {background-color: #ddd;}
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ff3333;
+  color: white;
+}
+</style>
+</head>
+<table  id="customers" align="center">
+
+        <tr><th>Student Name</th><th>Student Id</th><th>Branch</th><th>Student Email</th><th>Image</th><th>Action</th></tr>
+
+    {% if msg1 %}
+    <script>alert('Product detailes updated successfully.')</script>
+    {% endif %}
+
+    {% if msg2 %}
+    <script>alert('Product deleted successfully.')</script>
+    {% endif %}
+
+    {% for vals in vals %}
+        <tr>
+            <td>{{vals[0]}}</td>
+            <td>{{vals[1]}}</td>
+            <td>{{vals[2]}}</td>
+            <td>{{vals[3]}}</td>
+            <td><a href="#" onclick="window.open('/view_photo/{{vals[1]}}','newwindow', 'width=500, height=500'); return false;" >Id Card</a></td>
+            <!--td><img src="{{ url_for('static',filename='pictures/'+vals[6])}}" width="50" height="50"></td>-->
+
+
+            <td>
+                <a href="accept/{{vals[1]}}">Accept</a>
+                <a href="reject/{{vals[1]}}">Reject</a>
+            </tr>
+    {% endfor %}
+    </table>
+<br><br><br><br><br><br>
+{% include "footer.html" %}

@@ -1,0 +1,120 @@
+<head>
+<style>
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid red;
+}
+</style>
+</head>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+.time-left {
+    float: left;
+    color: #999;
+}
+</style>
+</head>
+
+<style>
+table {
+ height: 500px;
+    width: 100%;
+    display:block;
+}
+thead {
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+}
+tbody {
+    height: 500px;
+    display: inline-block;
+    width: 100%;
+    overflow: auto;
+}
+</style>
+
+<body>
+<br><br><br>
+<!-- <table >
+<tr><td > -->
+{% for chat in chatrec %}
+
+		{% if chat[2]==owner_email %}
+<div class="container">
+<img src="{{ url_for('static',filename='assets/img/seller.png')}}" alt="Avatar">
+  <p class="time-left">{{chat[1]}}</p>
+  <span class="time-right">{{chat[3]}}</span>
+</div>
+
+{% else %}
+<div class="container darker">
+ <img  src="{{ url_for('static',filename='assets/img/student.png')}}" alt="Avatar" class="right">
+  <p class="time-right">{{chat[1]}}</p>
+  <span class="time-left">{{chat[3]}}</span>
+</div>
+
+{% endif %}
+{% endfor %}
+					<form method="post" action="/schatbot2">
+							<div class="wrap-input100 validate-input m-b-23" data-validate = "Required">
+						<input class="input100" type="text" name="text"  autofocus placeholder="Your Message">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+<input type="hidden" name="s_email" value="{{s_email}}">
+</form>
+<!-- </table> -->
+</body>
+</html>
+

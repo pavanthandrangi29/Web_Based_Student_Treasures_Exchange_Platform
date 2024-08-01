@@ -1,0 +1,73 @@
+{% include "sheader.html" %}
+
+<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+
+						<h1>SHOP</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<div class="product-section mt-150 mb-150">
+		<div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-filters">
+                        <ul>
+
+                            <li data-filter="#">Drafters</li>
+                            <li data-filter="#">Calculators</li>
+                            <li data-filter="#">Notebooks</li>
+                            <li data-filter="#">Bread boards</li>
+                            <li data-filter="#">Text Books</li>
+                            <li data-filter="#">Bread Boards</li>
+                            <li data-filter="#">Written Notebooks</li>
+                            <li data-filter="#">Arduino Uno Boards</li>
+                            <li data-filter="#">Aprons</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row product-lists">
+
+{% for records in items %}
+
+				<div class="col-lg-4 col-md-6 text-center strawberry">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="#"><img src="{{ url_for('static',filename='pictures/'+records[6])}}" alt=""></a>
+                        </div>
+                        <h3>{{records[1]}}</h3>
+                        <!--p>Note: {{records[4]}} </p>-->
+						<p class="product-price"><span></span>&#x20B9;{{records[3]}} </p><br>
+						<!--form action="cart" method="post" >-->
+						<!--input type="hidden" name="sno" value="{{records[0]}}">-->
+
+
+						<a href="/view/{{records[0]}}" class="cart-btn"><i ></i> View</a>
+                        <!--/form>-->
+
+					</div>
+
+				</div>
+
+	<!-- end products -->
+
+	{%endfor%}
+                </div>
+            </div>
+	</div>
+
+{% include "footer.html" %}
+
+{% if msg %}
+<script>alert('Item Added To Cart')</script>
+{% endif %}
+

@@ -1,0 +1,98 @@
+{% include 'header.html' %}
+
+<script>
+
+	function ValidateEmail() {
+
+var emailInput = document.getElementById("email");
+  var emailValue = emailInput.value.trim();
+//alert(emailValue);
+
+  if (emailValue.endsWith("vignaniit.edu.in")) {
+
+    return true;
+
+  } else {
+
+    alert('Enter a valid VIIT-Email Address vignaniit.edu.in ');
+
+    return false;
+
+  }
+
+}</script>
+
+<style>
+h2 {text-align: center;}
+p {text-align: center;}
+
+</style>
+
+<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+
+						<h1>STUDENT REGISTRATION</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<!-- contact form -->
+	<div class="contact-from-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mb-5 mb-lg-0">
+					<div class="form-title">
+						<h2>STUDENT REGISTRATION</h2>
+
+					</div>
+				 	<div id="form_status"></div>
+					<div class="contact-form">
+
+						<form action="register_store" method="post" type="POST" id="fruitkha-contact" enctype="multipart/form-data" onsubmit="return ValidateEmail();">
+
+							<p>
+								<input type="text" placeholder="enter name" name="name" required>
+							</p>
+
+							<p>
+								<input type="text" placeholder="enter roll number" name="rno" required>
+							</p>
+
+							<p>
+								<input type="text" placeholder="enter branch" name="brnch" required>
+							</p>
+
+							<P>
+                                <input type="text" name="email" id="email" placeholder="enter college mail" required>
+							</p>
+
+                            <p>
+								<input type="password" id="password" name="pswd" placeholder="enter password" required>
+							</p>
+
+                            <p>
+								<input type="text" pattern="[0-9]{10,10}" name="mno" placeholder="enter contact number" required>
+							</p>
+
+							<P>
+                                <input type="file" name="file" placeholder="" required>
+							</p>
+
+                            <p><input type="submit" value="REGISTER"></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end contact form -->
+{% include 'footer.html' %}
+
+{% if msg %}
+<script>alert('Already Existed With Same (Id or Email)')</script>
+{% endif %}

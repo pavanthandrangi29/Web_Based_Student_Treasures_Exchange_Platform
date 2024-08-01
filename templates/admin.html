@@ -1,0 +1,84 @@
+{% include 'header.html' %}
+
+<!--script>
+
+ function ValidateEmail2() {
+
+var emailInput = document.getElementById("semail");
+
+  var emailValue = emailInput.value.trim();
+
+  if (emailValue.endsWith("vignaniit.edu.in")) {
+
+    return true;
+
+  } else {
+
+    alert('Enter a valid VIIT-Email Address vignaniit.edu.in ');
+
+    return false;
+
+  }
+  }
+
+</script>-->
+
+<style>
+h2 {text-align: center;}
+p {text-align: center;}
+
+</style>
+
+<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+
+						<h1>ADMIN LOGIN</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<!-- contact form -->
+	<div class="contact-from-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mb-5 mb-lg-0">
+					<div class="form-title">
+						<h2>ADMIN LOGIN</h2>
+						<p></p>
+					</div>
+				 	<div id="form_status"></div>
+					<div class="contact-form">
+						<form action="admin_login_check" method="post" type="POST"  >
+							<P>
+                                <input type="text" name="uid" placeholder="enter user id" required>
+							</p>
+                            <p>
+								<input type="password" name="pswd" placeholder="enter password" required>
+							</p>
+
+							<!--label for="fname">Paasword</label><br>
+							<p>
+								<input type="password" name="pswd" placeholder="enter password" required>
+							</p>-->
+
+                            <p>
+								<input type="submit" value="LOGIN">
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end contact form -->
+{% include 'footer.html' %}
+
+
+{% if msg %}
+<script>alert('invalid credentials')</script>
+{% endif %}
+

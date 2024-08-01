@@ -1,0 +1,68 @@
+{% include 'sheader.html' %}
+
+<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+
+						<h1>Add Items </h1>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<!-- contact form -->
+	<div class="contact-from-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mb-5 mb-lg-0">
+					<div class="form-title">
+						<h2>Add Items</h2>
+						<p></p>
+					</div>
+				 	<div id="form_status"></div>
+					<div class="contact-form">
+
+						<form action="item_adding" method="post" type="POST" id="fruitkha-contact" enctype="multipart/form-data" onsubmit="return ValidateEmail();">
+
+							<div class="form-group">
+                                <select type="text" placeholder="enter name" name="category" required>
+                                    <option value="" >Select Category
+                                    <option value="Drafters" >Drafters
+                                    <option value="Calculators" >Calculators
+                                    <option value="Text Books" >Text Books
+                                    <option value="Written Notebooks" >Written Notebooks
+                                    <option value="Arduino Uno Boards" >Arduino Uno Boards
+                                    <option value="Bread Boards" >Bread Boards
+                                    <option value="Used Project Equipment" >Used Project Equipment
+                                    <option value="Aprons" >Aprons
+                                    <option value="Notebooks" >Notebooks
+                                </select>
+							</div>
+
+							<p>
+								<input type="text" placeholder="Product Name" name="pname" required>
+							</p>
+
+							<p>
+								<input type="text" placeholder="Enter Price" name="price" required>
+							</p>
+
+                            <p>
+								<textarea  cols="30" type="text" name="description" placeholder="Product Description" required></textarea>
+							</p>
+
+							<P>
+                                <input type="file" name="file" placeholder=""   required>
+							</p>
+
+                            <p><input type="submit" value="ADD"></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end contact form -->
+{% include 'footer.html' %}

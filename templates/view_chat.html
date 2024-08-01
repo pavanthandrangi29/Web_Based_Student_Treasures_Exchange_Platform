@@ -1,0 +1,88 @@
+{% include "sheader.html" %}
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 18px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+
+<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+
+						<h1>View Inbox</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<br><br><br>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ff3333;
+  color: white;
+}
+</style>
+</head>
+
+<table  id="customers" align="center">
+
+        <tr><th>Id</th><th>Sender Email</th><th>Action</th></tr>
+
+
+    {% for values in values %}
+        <tr>
+            <td>{{values[0]}}</td>
+            <!--td>{{values[1]}}</td>-->
+            <td>{{values[2]}}</td>
+
+            <td>
+
+            <a href="#" onclick="window.open('/chat/{{values[2]}}', 'newwindow', 'width=650, height=650'); return false;" >Chat</a>
+
+            </tr>
+    {% endfor %}
+    </table>
+<br><br><br><br><br><br>
+{% include "footer.html" %}
