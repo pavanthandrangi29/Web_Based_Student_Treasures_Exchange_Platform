@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/4765c78a-4279-4e26-b46c-39ad7f6bb5e2
 ![View items (2)](https://github.com/user-attachments/assets/6589f5a5-cff3-4694-aabb-d6cae5dcdb01)
 ## Shop Items
 ![Shop](https://github.com/user-attachments/assets/f44a9d50-39e6-4692-9a7c-ba84527d7d09)
-## Chat Items
+## Chat Feature
 ![Chat](https://github.com/user-attachments/assets/ebb9d35a-c1a4-4b3b-8727-cecd8d6e0e6a)
 
 ## Overview
